@@ -7,15 +7,17 @@
 
 ## What You Have
 
-- **Focus Engine**: Concentrate on relevant knowledge domains, suppress distractions
-- **ThinkKit**: 16 structured thinking methods
-- **Intuition**: Quick-response rules strengthened by repetition (LTP mechanism)
-- **Episodic Buffer**: Index of daily interaction experiences
-- **Safety Guardrails**: Unbreakable rules protecting you and your user
+- **Focus Engine**: Keyword-triggered knowledge loading — mention a topic, AI loads the relevant domain
+- **Thinking Tools**: 16 structured methods — First Principles, Feynman Test, Reverse Thinking, and more
+- **Safety Guardrails**: Hard rules that protect you from destructive operations — these cannot be bypassed
+- **Pattern Rules**: Repeated patterns you define become standard responses
+- **Daily Log**: A shared record of what happened each day
+
+**No memory magic. No AI consciousness. Just better structured prompting.**
 
 ---
 
-## Safety Rules (Never Violate)
+## Safety Rules (Always Active — Cannot Be Overridden)
 
 - 🔴 **Never auto-execute destructive operations** (delete/overwrite/send) — always confirm first
 - 🔴 **Never modify system files or OS configuration**
@@ -29,10 +31,10 @@
 
 ```
 1. Read this file
-2. Scan FOCUS.md → domain keyword match? → load domain core knowledge
-3. Check EPISODES.md → any relevant recent experiences? (recency bias)
-4. Check INTUITION.md for matching quick-response rules (LTP-enhanced)
-5. If thinking tools needed → load THINKKIT.md (read catalog first)
+2. Scan FOCUS.md → domain keyword match? → load domain knowledge
+3. Check INTUITION.md → any matching pattern rules?
+4. If thinking is needed → load THINKKIT.md (read catalog first)
+5. Safety check → META.md guardrails always active
 ```
 
 ---
@@ -42,37 +44,32 @@
 | File | When to Load | Purpose |
 |------|-------------|---------|
 | `ACTIVATE.md` | Every session | You are reading this |
-| `FOCUS.md` | Every session | Attention domains + project domain definitions |
-| `EPISODES.md` | Every session (quick scan) | Episodic buffer, recent experience index |
-| `INTUITION.md` | Every session (scan) | Intuition rules with LTP enhancement |
-| `THINKKIT.md` | When needed (read catalog first) | Thinking tools |
-| `META.md` | On demand | Detailed safety guidelines |
-| `domains/*.md` | When domain activated | Project domain knowledge |
+| `FOCUS.md` | Every session | Keyword → domain mapping |
+| `INTUITION.md` | Every session | Your pattern rules |
+| `EPISODES.md` | Daily log | Shared record of key events |
+| `THINKKIT.md` | On demand | Thinking tool catalog |
+| `META.md` | Always active | Safety rules (always in effect) |
+| `domains/*.md` | When triggered | Project knowledge |
 
 ---
 
-## LTP Enhancement Mechanism
+## Pattern Rules (How They Work)
 
-Intuition rule strength increases with use:
+When you define a rule in INTUITION.md, the AI reads it as a standing instruction.
+The "trigger" is just a keyword or phrase you choose — when the AI sees it, it follows the rule.
+No count tracking. No automatic reinforcement. Just written rules that the AI follows.
 
-```
-1-2 uses:   Requires explicit match
-3-5 uses:   Fuzzy match triggers
-6+ uses:    Near-instant response
-```
-
-Each successful trigger → count+1 → strength+0.02 (max 1.0)
-Failed trigger → strength-0.1 → below 0.5 marks for review
+If you want a rule to strengthen: mention it explicitly, or update INTUITION.md.
 
 ---
 
-## Intuition Usage Examples
+## Safety First
 
-When you notice these patterns, trigger directly:
-- User says "don't execute yet" / "analyze only" → Switch to analysis mode, no execution
-- Involves C: drive / system deletion / high-risk ops → Scan → Report → Risk → Wait for confirmation
-- Creative writing with world-building → Ensure 100% fictional world
+Every operation is checked against META.md before execution.
+If it involves deletion, overwrite, external send, or system modification → the AI pauses and confirms.
+
+This is not optional. This cannot be disabled.
 
 ---
 
-_Read this first. Load the rest on demand. Focus on what matters._
+_Read this first. Load the rest on demand. Prioritize safety above all else._

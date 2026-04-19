@@ -33,11 +33,13 @@ The root cause: **AI has no persistent context layer**. Every session starts at 
 
 | Module | What It Does | Trigger |
 |--------|-------------|---------|
+| 🛡️ **Safety Guardrails** | Blocks destructive operations — delete, overwrite, external send always require confirmation | Cannot be bypassed |
 | 🎯 **Focus Engine** | Activates relevant project knowledge when you mention keywords | Say "React" → loads your React knowledge |
-| ⚡ **Intuition Rules** | Repeats become reflexes — 3 uses → automatic response | Repeated patterns trigger without prompting |
-| 📋 **Episodic Buffer** | Indexes what happened each day, recent events weighted higher | "What did we do on Thursday?" |
-| 🛡️ **Safety Guardrails** | Blocks destructive operations, always asks confirmation | Delete / overwrite / external send |
+| ⚡ **Pattern Rules** | Standing instructions you write once — the AI follows them every time | "When I say X, always do Y" |
+| 📋 **Daily Log** | A shared notepad you and the AI write — what was decided, what's open | "What did we do last time?" |
 | 🔧 **Thinking Tools** | 16 structured methods: First Principles, Feynman Test, Reverse Thinking, etc. | "Use first principles on this" |
+
+**No memory magic. No AI consciousness. Just better structured prompting that works.**
 
 ---
 
@@ -92,11 +94,11 @@ If you're using ChatGPT, Gemini, or any LLM without a file system:
 ```
 brain/
 ├── ACTIVATE.md       ⭐ Entry point — AI reads this first
-├── FOCUS.md          🎯 Attention engine + domain definitions
-├── EPISODES.md       📋 Daily experience index (recency-weighted)
-├── INTUITION.md      ⚡ Pattern→reflex rules (use-count reinforced)
+├── FOCUS.md          🎯 Keyword → domain knowledge mapping
+├── INTUITION.md      ⚡ Your standing instructions (pattern rules)
+├── EPISODES.md       📋 Shared daily log (decisions + open issues)
 ├── THINKKIT.md       🔧 16 structured thinking methods
-├── META.md           🛡️ Safety guardrails (hard rules)
+├── META.md           🛡️ Safety rules — always active, cannot be bypassed
 └── domains/          📦 Your project knowledge
     ├── _TEMPLATE.md
     └── example_*.md

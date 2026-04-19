@@ -14,7 +14,7 @@ from pathlib import Path
 
 REQUIRED_FILES = {
     "ACTIVATE.md": {
-        "sections": ["Startup Sequence", "Core Rules", "File Map"],
+        "sections": ["Startup Sequence", "Safety Rules", "File Map"],
         "description": "Entry point — the first file AI reads",
     },
     "FOCUS.md": {

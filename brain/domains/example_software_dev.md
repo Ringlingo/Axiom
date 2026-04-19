@@ -1,7 +1,7 @@
 # 💻 Domain Knowledge Cluster — Software Development
 
-> **Mounted under**: FOCUS.md → software_dev domain
-> **Created**: 2026-04-17
+> **Mounted under**: FOCUS.md → `software_dev` domain
+> **This is an example**. Replace with your actual project knowledge.
 
 ---
 
@@ -9,16 +9,17 @@
 
 ## Core Knowledge
 
-- **Active projects**: [path to your code repositories]
-- **Tech stack**: [your main technologies]
-- **Coding standards**: [your style guides, conventions]
+- **Project type**: Web application (example)
+- **Frontend**: React 18 + TypeScript + Tailwind CSS
+- **Backend**: Node.js + Express + PostgreSQL
+- **API**: REST in `src/api/`, tRPC for internal
 
-## Key Preferences
+## Key Conventions
 
-- Prefer modular, readable code over clever one-liners
-- Test before deployment
-- Document public APIs
-- Git commit messages should be meaningful
+- Always run `pnpm lint` before commit
+- Use TypeScript strict mode — no `any`
+- No CSS Modules — use Tailwind only
+- Never edit `schema.prisma` directly — use migrations
 
 ==END==
 
@@ -36,20 +37,11 @@
 
 ---
 
-==FRAGMENT:deep==
+## How to Use This Domain
 
-## Deep Knowledge (Load on demand)
+1. Edit `==FRAGMENT:core==` with your actual project knowledge
+2. Keep it concise — only the most important conventions
+3. Update `==FRAGMENT:recent==` after significant work sessions
+4. Add domain definition to `brain/FOCUS.md`
 
-### Architecture Patterns
-- Modular design
-- Separation of concerns
-- DRY (Don't Repeat Yourself)
-- KISS (Keep It Simple, Stupid)
-
-### Debugging Approach
-- Reproduce the error
-- Isolate the cause
-- Fix root cause
-- Verify fix
-
-==END==
+_This is a template. Copy it, fill it in, and add to FOCUS.md._

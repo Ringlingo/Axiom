@@ -1,63 +1,79 @@
-# 📋 MindKit — Episodic Buffer
+# 📋 MindKit — Daily Log
 
-> **Role**: Index of daily interaction episodes — what happened, when, where, emotional tag
-> **Neuroscience Basis**: Episodic Buffer (Baddeley) — integrates experiences with temporal and spatial context
-
----
-
-## Mechanism
-
-```
-Daily interaction → Key event record → EPISODES index → Priority retrieval by recency
-```
-
-- Each entry: date + theme + key decisions/outcomes + emotional tag
-- Retrieval priority: recency bias (recent events weighted higher)
-- Long-unretrieved → archived to deep storage
+> **Role**: A shared scratch pad — what happened, key decisions, what was decided.
+> **How it works**: You and the AI write key events here. Both can read and write.
+> **No memory magic. No retrieval algorithm. Just a shared record.**
 
 ---
 
-## Index Format
+## Purpose
+
+When you come back to a project after a few days, you shouldn't have to re-explain what happened.
+
+EPISODES.md is a plain daily log. Read it when you need context. Write to it when something important happens.
+
+That's it. No recency bias. No weighted retrieval. Just a shared notepad.
+
+---
+
+## Format
 
 ```yaml
-episodes:
+## YYYY-MM-DD
 
-  - date: YYYY-MM-DD
-    theme: "What happened"
-    key_events:
-      - "Event 1"
-      - "Event 2"
-    emotion: neutral/positive/negative/breakthrough
-    domains: [relevant_domain_tags]
+**Theme**: What was the main focus today?
 
-  - date: YYYY-MM-DD
-    theme: "Another session"
-    key_events:
-      - "Decided to use approach X instead of Y"
-      - "Discovered that Z doesn't work"
-    emotion: breakthrough
-    domains: [my_project, debugging]
+**Key Decisions**:
+- Decision 1
+- Decision 2
+
+**What Was Done**:
+- Completed X
+- Started Y, blocked by Z
+
+**Open Issues**:
+- Still need to resolve: ...
+- Waiting on: ...
+
+**Tags**: [domain1, domain2]
 ```
 
 ---
 
-## Usage Rules
+## When to Write
 
-1. **After each session**: Add new episode if significant work happened
-2. **After 30 days**: Move to `archived:` section
-3. **Retrieval**: Both by date (reverse chronological) AND by domain keyword
+Write an entry when:
+- A significant decision was made
+- A blocking issue was resolved or identified
+- A major feature was started or completed
+- Direction changed
+- Something the AI should remember next session
 
----
-
-## Why This Exists
-
-Unlike explicit knowledge (facts, rules), episodic memory captures *experiences*:
-- What approach worked yesterday
-- Which path was a dead end last week
-- The emotional context of a decision
-
-This mirrors how the brain's hippocampus buffers experiences before they consolidate into long-term semantic memory.
+**Don't write**: casual conversation, trivial questions, things that don't matter next week.
 
 ---
 
-_Episodic memory is the index of your journey. Every decision becomes traceable._
+## When to Read
+
+At the start of a session, scan EPISODES.md for:
+- Recent entries (last 7 days)
+- Entries tagged with your current domain
+
+If you see something relevant, load the full entry.
+
+---
+
+## Cleanup
+
+Entries older than 30 days can be archived under `## Archive` at the bottom.
+Move them, don't delete them — the history might matter later.
+
+---
+
+## Your Log
+
+<!-- Add today's entry at the top. Older entries below. -->
+
+---
+
+_EPISODES.md: Your shared project diary._

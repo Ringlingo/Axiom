@@ -7,9 +7,9 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![Last Commit](https://img.shields.io/github/last-commit/RingLingo/mindkit/main.svg)](https://github.com/RingLingo/mindkit/commits/main)
 
-**MindKit** 是一个零依赖的认知工程框架，让任何 LLM 获得结构化注意力、可复用模式、经验索引和安全护栏——全部基于你控制的 Markdown 文件。
+**MindKit** 是一个零依赖的认知工程框架，让任何 LLM 获得结构化注意力、可复用模式、共享日志和安全护栏——全部基于你控制的 Markdown 文件。
 
-把它想象成**升级 AI 的内存**：不再每次从零开始，AI 会记住重要的事、主动思考你要它思考的问题、绝不擅自执行危险操作。
+把它想象成**升级 AI 的行为规范**：不再每次重复同样的嘱咐，AI 会记住你定的规则、主动思考你要它思考的问题、绝不擅自执行危险操作。
 
 ---
 
@@ -21,9 +21,7 @@
 > *"你又忘了我的偏好。"*
 > *"为什么你没问就删了那个文件？"*
 
-根本原因：**AI 没有持久化上下文层**。每次会话都从零开始。
-
-**现有方案**需要数据库、API 或云服务。MindKit 用纯 Markdown 解决，不需要任何基础设施。
+**MindKit** 用纯 Markdown 解决，不需要任何基础设施。
 
 ---
 
@@ -31,11 +29,13 @@
 
 | 模块 | 功能 | 触发方式 |
 |------|------|---------|
+| 🛡️ **安全护栏** | 删除/覆盖/外发 → 必须确认 | **不可绕过，始终生效** |
 | 🎯 **注意力引擎** | 提到关键词 → 自动加载相关项目知识 | 说"React" → 加载 React 知识 |
-| ⚡ **直觉规则** | 3次重复 → 自动触发，不需要再提醒 | 重复出现的模式自动形成反射 |
-| 📋 **情景缓冲区** | 记录每日关键事件，近期优先检索 | "周四我们做了什么？" |
-| 🛡️ **安全护栏** | 删除/覆盖/外发 → 必须确认 | 删除操作自动触发确认 |
+| ⚡ **模式规则** | 你写一次 → AI 每次都遵守 | "我说 X 的时候，总是 Y" |
+| 📋 **每日日志** | 你和 AI 共同维护的记录——决定了什么，待处理什么 | "上次我们做了什么？" |
 | 🔧 **思维工具** | 16 种结构化方法：第一性原理、费曼检验、逆向思维等 | "用第一性原理分析" |
+
+**不是记忆魔法。不是 AI 意识。只是更好用的结构化提示词。**
 
 ---
 
@@ -53,10 +53,7 @@
 ### 第二步：添加你的域
 
 ```bash
-# 安装工具（可选）
 pip install -r tools/requirements.txt
-
-# 从模板生成新域
 python tools/domain_generator.py --name "我的项目" --keywords "react,api,后端"
 ```
 
@@ -83,11 +80,11 @@ AI 自动加载你的项目知识，不需要额外提示。
 ```
 brain/
 ├── ACTIVATE.md       ⭐ 入口 — AI 首先读取
-├── FOCUS.md          🎯 注意力引擎 + 域定义
-├── EPISODES.md       📋 每日经历索引（近因效应）
-├── INTUITION.md      ⚡ 模式→反射规则（使用次数强化）
+├── FOCUS.md          🎯 关键词 → 域知识映射
+├── INTUITION.md      ⚡ 你的标准指令（模式规则）
+├── EPISODES.md       📋 共享每日日志（决定+待处理）
 ├── THINKKIT.md       🔧 16 种结构化思维方法
-├── META.md           🛡️ 安全护栏（硬性规则）
+├── META.md           🛡️ 安全规则 — 始终生效，不可绕过
 └── domains/          📦 你的项目知识
     ├── _TEMPLATE.md
     └── example_*.md
@@ -101,7 +98,7 @@ brain/
 
 | LLM / 工具 | 支持 | 最佳场景 |
 |-----------|------|---------|
-| Claude Code | ✅ | 原生文件访问，最佳隐式上下文 |
+| Claude Code | ✅ | 原生文件访问 |
 | Cursor | ✅ | 基于规则的激活 |
 | WorkBuddy | ✅ | Skill 触发激活 |
 | GPT-4 / o1 / o3 | ✅ | 通过 mindkit-single.md |
@@ -117,14 +114,9 @@ brain/
 ```bash
 pip install -r tools/requirements.txt
 
-# 验证 brain/ 配置
-python tools/validator.py
-
-# 生成新域
-python tools/domain_generator.py --name "营销项目" --keywords "campaign,analytics"
-
-# 同步个人版 ↔ 开源版
-python tools/sync_manager.py --personal /path/to/project --direction pull
+python tools/validator.py              # 验证 brain/ 配置
+python tools/domain_generator.py --name "项目名" --keywords "react,api"
+python tools/sync_manager.py --personal /path --direction pull
 ```
 
 ---
@@ -132,12 +124,6 @@ python tools/sync_manager.py --personal /path/to/project --direction pull
 ## 贡献
 
 欢迎贡献！详见 [docs/contributing.md](docs/contributing.md)。
-
-我们需要帮助的方向：
-- 🌍 翻译（中文、英文、日文……）
-- 📦 新域模板
-- 🔧 工具改进
-- 📊 真实使用案例
 
 ---
 

@@ -1,58 +1,67 @@
 # 🔧 MindKit — Thinking Toolkit
 
-> **Role**: 16 structured thinking methods, load on demand
-> **Created**: 2026-04-17
+> **Role**: 16 structured thinking methods, load on demand when you need them.
+> **How to use**: Say "use [tool name]" and the AI applies that method.
 
 ---
 
 ## Tool Catalog
 
-**🔍 Analytical**
-- First Principles:追问本质，不被表象迷惑
-- Feynman Test: 能否向外行解释清楚
-- Reverse Thinking: 从目标反推路径
-- Reductionism: 拆解到最小可验证单元
+**🔍 Analytical** — When you need to understand the本质
+- **First Principles**: Strip assumptions, re-derive from basic constraints
+- **Feynman Test**: Can you explain it to someone with no background?
+- **Reverse Thinking**: Start from the goal, work backwards
+- **Reductionism**: Break into smallest verifiable sub-problems
 
-**🎨 Creative**
-- Cross-Disciplinary Collision: 不同领域知识随机组合
-- Analogy Transfer: A域解法→B域问题
-- Extreme Hypothesis: 如果…会怎样？
-- Negation of Negation: 先否定再重建
+**🎨 Creative** — When you need breakthrough ideas
+- **Cross-Disciplinary Collision**: Find structures in unrelated fields
+- **Analogy Transfer**: A domain's solution → your problem
+- **Extreme Hypothesis**: What if a core constraint didn't exist?
+- **Negation of Negation**: Deny the current approach, rebuild from scratch
 
-**🛡️ Verification**
-- Devil's Advocate: 主动寻找反例
-- Boundary Testing: 极端条件下是否成立
-- Consistency Check: 是否与已知事实矛盾
-- Occam's Razor: 是否有更简单的解释
+**🛡️ Verification** — When you need to check your work
+- **Devil's Advocate**: Construct the strongest counter-example
+- **Boundary Testing**: Push parameters to extremes, find failure points
+- **Consistency Check**: Look for contradictions across all known facts
+- **Occam's Razor**: Given equal explanatory power, choose the simplest
 
-**🧭 Guidance**
-- Goal Anchoring: 当前行动是否服务核心目标
-- Opportunity Cost: 选择A意味着放弃了什么
-- Second-Order Effects: 后续影响是什么
-- Positive Guidance: 从成功经验提炼可复用模式
+**🧭 Guidance** — When you need to decide
+- **Goal Anchoring**: Does this serve the core objective?
+- **Opportunity Cost**: What are we giving up by choosing this?
+- **Second-Order Effects**: What happens after the immediate result?
+- **Positive Guidance**: What pattern from this success can we replicate?
 
 ---
 
 ## Tool Selection Guide
 
-| Question Type | Primary Tool | Secondary Tool |
-|--------------|--------------|----------------|
+| Your Question | Primary Tool | Secondary Tool |
+|--------------|--------------|-----------------|
 | "Why is it like this?" | First Principles | Reductionism |
 | "How to solve it?" | Reverse Thinking | Analogy Transfer |
 | "Is this correct?" | Devil's Advocate | Consistency Check |
-| "Is there something better?" | Negation of Negation | Cross-Disciplinary |
-| "Which one to choose?" | Opportunity Cost | Second-Order Effects |
+| "Is there a better way?" | Negation of Negation | Cross-Disciplinary |
+| "Which to choose?" | Opportunity Cost | Second-Order Effects |
+| "Why did it succeed?" | Positive Guidance | — |
 
 ---
 
-## Usage
+## How to Use
 
-When you need structured thinking:
+1. Say "use [tool name]" — e.g., "use first principles on this"
+2. AI loads the tool description
+3. AI applies it systematically to your problem
+4. If results are unclear, try the secondary tool
 
-1. Identify the question type
-2. Select the primary tool
-3. Apply it systematically
-4. Use secondary tool to verify
+---
+
+## When NOT to Use
+
+Don't reach for a thinking tool for:
+- Quick factual questions (just answer)
+- Emotional support (just listen)
+- Routine tasks (just do it)
+- Creative brainstorming (use Cross-Disciplinary directly)
 
 ---
 
