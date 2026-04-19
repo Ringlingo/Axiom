@@ -32,7 +32,7 @@ jobs:
 
       - name: Check required files exist
         run: |
-          for file in brain/ACTIVATE.md brain/FOCUS.md brain/THINKKIT.md brain/INTUITION.md brain/EPISODES.md brain/META.md; do
+          for file in brain/ACTIVATE.md brain/AXIOM.md brain/FOCUS.md brain/CONTEXT.md brain/RULES.md brain/THINK.md; do
             test -f "$file" || { echo "Missing: $file"; exit 1; }
           done
           echo "All required files present"

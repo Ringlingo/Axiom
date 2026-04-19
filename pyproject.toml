@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mindkit"
-version = "2.1.0"
-description = "Zero-dependency cognitive engineering framework for AI agents"
+name = "axiom"
+version = "3.0.0"
+description = "The cognitive layer that makes AI reliable — zero-dependency behavioral framework"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [

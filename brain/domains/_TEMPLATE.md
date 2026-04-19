@@ -1,67 +1,42 @@
-# 🏷️ Domain Knowledge Cluster — [Domain Name]
+# Domain Template — Fill This In
 
-> **Mounted under**: FOCUS.md → [domain_id] domain
-> **Created**: [Date]
+> Copy this file → rename to your domain → fill in → add to FOCUS.md
 
 ---
 
 ==FRAGMENT:core==
 
-## Core Knowledge
+## Project Type
+[e.g., Web application / Research project / Creative writing / Data analysis]
 
-- **Related files**: [path to domain-specific files]
-- **Key resources**: [documentation, references, etc.]
+## Tech Stack / Tools
+- [Key technologies]
 
-## Key Preferences
+## Key Conventions
+- Always [important convention]
+- Never [important avoidance]
+- Prefer [preferred approach]
 
-- [Preference 1]
-- [Preference 2]
-
-==END==
-
----
-
-==FRAGMENT:recent==
-
-## Recent Usage
-
-| Date | Event | Status |
-|------|-------|--------|
-| YYYY-MM-DD | [What happened] | [completed/in-progress] |
+## User Preferences
+- [How the human likes things done]
+- [Formatting/style preferences]
 
 ==END==
 
 ---
 
-==FRAGMENT:deep==
+==FRAGMENT:context==
 
-## Deep Knowledge (Load on demand)
+## Current State
+- **Last Active**: YYYY-MM-DD
+- **Status**: [What was being worked on]
+- **Completed**: [Recent milestones]
 
-### [Sub-topic 1]
-- Detail 1
-- Detail 2
+## Open Issues
+- [Current blockers]
+- [Known problems]
 
-### [Sub-topic 2]
-- Detail 1
-- Detail 2
+## Next Action
+- [Immediate next step]
 
 ==END==
-
----
-
-## How to Add This Domain
-
-1. Copy this file → rename to `domains/your_domain.md`
-2. Fill in your core knowledge and preferences
-3. Add to FOCUS.md:
-
-```yaml
-domain: your_domain
-name: "Your Domain"
-icon: "🏷️"
-keywords: [keyword1, keyword2, keyword3]
-```
-
----
-
-_This is a template. Copy it, fill it in, and add to FOCUS.md._

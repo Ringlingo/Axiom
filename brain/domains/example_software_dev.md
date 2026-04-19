@@ -1,47 +1,44 @@
-# 💻 Domain Knowledge Cluster — Software Development
+# 💻 Domain — Software Development
 
-> **Mounted under**: FOCUS.md → `software_dev` domain
-> **This is an example**. Replace with your actual project knowledge.
+> **Mounted under**: FOCUS.md → `software_dev`
+> **Replace this content with your actual project knowledge.**
 
 ---
 
 ==FRAGMENT:core==
 
-## Core Knowledge
+## Project Type
+[Describe your project: web app / CLI tool / library / API / ...]
 
-- **Project type**: Web application (example)
-- **Frontend**: React 18 + TypeScript + Tailwind CSS
-- **Backend**: Node.js + Express + PostgreSQL
-- **API**: REST in `src/api/`, tRPC for internal
+## Tech Stack
+- Frontend: [e.g., React 18 + TypeScript + Tailwind]
+- Backend: [e.g., Node.js + Express + PostgreSQL]
+- Build: [e.g., Vite, Webpack, Docker]
+- Deploy: [e.g., Vercel, AWS, Fly.io]
 
 ## Key Conventions
-
-- Always run `pnpm lint` before commit
-- Use TypeScript strict mode — no `any`
-- No CSS Modules — use Tailwind only
-- Never edit `schema.prisma` directly — use migrations
-
-==END==
-
----
-
-==FRAGMENT:recent==
-
-## Recent Usage
-
-| Date | Event | Status |
-|------|-------|--------|
-| YYYY-MM-DD | [What happened] | [completed/in-progress] |
+- Always [your most important convention]
+- Never [something you never do]
+- Start with [preferred approach]
+- Avoid [known pitfalls]
 
 ==END==
 
 ---
 
-## How to Use This Domain
+==FRAGMENT:context==
 
-1. Edit `==FRAGMENT:core==` with your actual project knowledge
-2. Keep it concise — only the most important conventions
-3. Update `==FRAGMENT:recent==` after significant work sessions
-4. Add domain definition to `brain/FOCUS.md`
+## Current State
+- **Last Active**: [YYYY-MM-DD]
+- **Status**: [What is the current project state]
+- **Completed**: [What was finished recently]
 
-_This is a template. Copy it, fill it in, and add to FOCUS.md._
+## Open Issues
+- [Current blockers]
+- [Known bugs]
+- [Technical debt]
+
+## Next Action
+- [Immediate next step]
+
+==END==

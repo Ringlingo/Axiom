@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MindKit Domain Generator
+Axiom Domain Generator
 Generate a new domain knowledge cluster from template.
 
 Usage:

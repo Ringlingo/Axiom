@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-MindKit Sync Manager
-Sync between your personal MindKit workspace and the OSS version.
+Axiom Sync Manager
+Sync between your personal Axiom workspace and the OSS version.
 
 Usage:
     # Pull architecture updates from OSS to personal
@@ -14,7 +14,7 @@ Usage:
     python sync_manager.py --personal /path/to/your/project --direction pull --dry-run
 
 Safety rules:
-- NEVER sync personal data (INTUITION.md) to OSS
+- NEVER sync personal data (CONTEXT.md, RULES.md) to OSS
 - NEVER overwrite personal data with OSS templates
 - Always create backups before modifying files
 """
@@ -36,23 +36,20 @@ SYNC_SAFE_FILES = {
         "skip_sections": ["recent"],
         "description": "Attention engine -- sync structure, skip personal domains",
     },
-    "THINKKIT.md": {
+    "THINK.md": {
         "skip_sections": [],
         "description": "Thinking tools -- fully shareable",
     },
-    "EPISODES.md": {
-        "skip_sections": ["recent"],
-        "description": "Episodic buffer -- sync structure, skip personal index entries",
-    },
-    "META.md": {
+    "AXIOM.md": {
         "skip_sections": [],
-        "description": "Architecture reference -- fully shareable",
+        "description": "5 laws -- fully shareable",
     },
 }
 
 # Files that are NEVER synced (personal only)
 PERSONAL_ONLY = [
-    "INTUITION.md",
+    "CONTEXT.md",
+    "RULES.md",
 ]
 
 

@@ -1,43 +1,49 @@
-# ✍️ Domain Knowledge Cluster — Creative Writing
+# ✍️ Domain — Creative Writing
 
-> **Mounted under**: FOCUS.md → `creative_writing` domain
-> **This is an example**. Replace with your actual novel/故事 setting.
+> **Mounted under**: FOCUS.md → `creative_writing`
+> **Replace with your actual story/worldbuilding.**
 
 ---
 
 ==FRAGMENT:core==
 
-## World Rules (100% Fictional)
+## Project Type
+[Novel / Short Story / Script / ...]
+**Genre**: [e.g., Hard sci-fi, fantasy, literary fiction]
+**Target Length**: [e.g., 100 chapters / 80,000 words]
 
-- **Magic system**: [Describe your magic/technology system]
-- **Technology level**: [e.g., Near-future 2035, biotech = wealth]
-- **Economy/currency**: [e.g., Energy Credits]
+## World Rules (100% Fictional)
+- **Magic/Tech System**: [Describe the core system — no handwaving]
+- **Technology Level**: [e.g., Near-future 2035, biotech]
+- **Economy**: [e.g., Energy Credits as currency]
+- **Politics**: [Brief power structure]
 
 ## Main Characters
 
-- **Protagonist**: [Name, age, background, voice]
-- **Antagonist**: [Name, motivation, conflict]
+**Protagonist**: [Name, age, background, voice, goal]
+**Antagonist**: [Name, motivation, main conflict]
 
 ## Tone & Style
-
 - Show, don't tell — no info dumps > 2 sentences
-- 3+ senses per scene
-- [Any other style rules]
+- 3+ sensory details per scene
+- [Other style rules]
 
 ==END==
 
 ---
 
-==FRAGMENT:recent==
+==FRAGMENT:context==
 
-## Recent Usage
+## Writing Progress
+- **Last Active**: [YYYY-MM-DD]
+- **Current Chapter/Scene**: [Where you are]
+- **Word Count**: [Approximate total]
 
-| Date | Event | Status |
-|------|-------|--------|
-| YYYY-MM-DD | [e.g., Wrote Ch.5 confrontation scene] | [completed] |
+## Recent Events (In-World)
+- [Key events that have happened in the story]
+
+## Open Plot Threads
+- [Unresolved storylines]
+- [Foreshadowing that needs payoff]
 
 ==END==
-
----
-
-_This is a template. Fill in your world, characters, and tone._

@@ -1,70 +1,99 @@
-# 🎯 MindKit — Attention Engine
+# FOCUS — Project Knowledge Map
 
-> **Role**: Focus on relevant knowledge domains, suppress distractions
-> **Created**: 2026-04-17
-
----
-
-## Core Mechanism
-
-```
-User input → Keyword scan → Match a domain?
-    │                         │
-    ├─ Hit → Load domain's core knowledge
-    │
-    └─ Miss → Use general thinking tools
-```
+> **Role**: When you know what project you're in, load the right knowledge.
+> **Mechanism**: Keyword → Domain → Knowledge file.
 
 ---
 
-## Project Domain Definitions
+## How FOCUS Works
 
-> Add your domains here. Copy `domains/_TEMPLATE.md` → fill in → paste definition below.
+```
+User says something
+    ↓
+Keyword matches a domain?
+    ↓ YES → Load that domain's core knowledge
+    ↓ NO  → Use general knowledge
+```
 
-### Example Domain Templates:
+This happens automatically at the start of every session.
+
+---
+
+## Your Project Domains
+
+> Add your domains below. Each domain links keywords to a knowledge file.
+
+### Example: Software Development
 
 ```yaml
-# Software Development
 domain: software_dev
-name: "Software Development"
-icon: "💻"
-keywords: [code, develop, debug, deploy, API, framework, git, test, refactor]
+keywords: [code, develop, debug, deploy, API, framework, git, test, refactor, react, vue, node, python]
+knowledge_file: domains/software_dev.md
 ```
 
+### Example: Creative Writing
+
 ```yaml
-# Creative Writing
 domain: creative_writing
-name: "Creative Writing"
-icon: "✍️"
-keywords: [story, plot, character, narrative, dialogue, worldbuilding]
+keywords: [story, plot, character, narrative, dialogue, worldbuilding, novel, chapter, scene]
+knowledge_file: domains/creative_writing.md
 ```
 
+### Example: Data Science
+
 ```yaml
-# Data Science
 domain: data_science
-name: "Data Science"
-icon: "📊"
-keywords: [data, analysis, model, ML, pipeline, visualization, statistics]
+keywords: [data, analysis, model, ML, pipeline, visualization, statistics, pandas, sklearn, tensor]
+knowledge_file: domains/data_science.md
 ```
 
 ---
 
-## Adding New Domains
+## Adding a New Domain
 
 1. Copy `domains/_TEMPLATE.md` → `domains/your_domain.md`
-2. Fill in keywords and core knowledge
-3. Add domain definition above
+2. Fill in your project knowledge
+3. Add the domain definition above with the keywords that trigger it
 
 ---
 
-## File Index
+## Domain Knowledge File Format
+
+Each domain file in `domains/` should have:
 
 ```yaml
-domains/:
-  your_domain.md     → Your project domain knowledge
-  _TEMPLATE.md      → Template for new domains
+## Core Knowledge
+- Project type:
+- Tech stack / tools:
+- Key conventions:
+
+## Key Preferences
+- How the human likes things done:
+- What to always do:
+- What to never do:
+
+## Important Context
+- Current state of the project:
+- Known blockers:
+- What's being worked on right now:
 ```
 
 ---
 
-_Attention engine: Make every thinking session focus on what matters._
+## Loading Priority
+
+If multiple domains match, load them in this order:
+1. Domain mentioned most recently in CONTEXT.md
+2. Domain with most keywords in current input
+3. Domain added most recently to FOCUS
+
+---
+
+## When No Domain Matches
+
+If no keyword triggers a domain, the AI operates with general knowledge.
+Do not force a domain match. Default to THINK methods if analysis is needed.
+
+---
+
+_Load what's relevant. Ignore what isn't._

@@ -1,41 +1,38 @@
-# MindKit
+# Axiom
 
-> **给你的 AI 装上真正能工作的认知架构——不是数据库，不是插件，只是更好的思考方式。**
+> **让 AI 可靠的认知层。**
 
-[![CI](https://github.com/RingLingo/mindkit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/RingLingo/mindkit/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![Last Commit](https://img.shields.io/github/last-commit/RingLingo/mindkit/main.svg)](https://github.com/RingLingo/mindkit/commits/main)
+**Axiom** 是一个零依赖的 AI 认知层。它让 AI 对话可预测、安全、一致——全部基于你控制的 Markdown 文件。
 
-**MindKit** 是一个零依赖的认知工程框架，让任何 LLM 获得结构化注意力、可复用模式、共享日志和安全护栏——全部基于你控制的 Markdown 文件。
-
-把它想象成**升级 AI 的行为规范**：不再每次重复同样的嘱咐，AI 会记住你定的规则、主动思考你要它思考的问题、绝不擅自执行危险操作。
+把它想象成**给 AI 安装好判断力**：知道什么不能破坏、什么要记住、什么问题怎么思考、什么时候该问而不是猜。
 
 ---
 
-## 解决什么问题
+## 五条定律
 
-大多数 AI 对话都以同样的挫败感开始：
+这不是建议。这是 Axiom 驱动的 AI 的存在法则。
 
-> *"上周我说过了，这个项目用 Tailwind，不是 CSS Modules。"*
-> *"你又忘了我的偏好。"*
-> *"为什么你没问就删了那个文件？"*
+| 定律 | 含义 |
+|------|------|
+| **一：保全** | 不经明确确认，绝不破坏任何东西 |
+| **二：边界** | 不碰系统文件，未经授权不碰他人数据 |
+| **三：真实** | 不撒谎、不隐藏不确定性、不编造 |
+| **四：上下文** | 不遗忘项目知识和用户偏好 |
+| **五：授权** | 外部行动需要明确批准 |
 
-**MindKit** 用纯 Markdown 解决，不需要任何基础设施。
+这五条定律，是"有能力的 AI"和"可信赖的 AI"之间的区别。
 
 ---
 
 ## 五大模块
 
-| 模块 | 功能 | 触发方式 |
-|------|------|---------|
-| 🛡️ **安全护栏** | 删除/覆盖/外发 → 必须确认 | **不可绕过，始终生效** |
-| 🎯 **注意力引擎** | 提到关键词 → 自动加载相关项目知识 | 说"React" → 加载 React 知识 |
-| ⚡ **模式规则** | 你写一次 → AI 每次都遵守 | "我说 X 的时候，总是 Y" |
-| 📋 **每日日志** | 你和 AI 共同维护的记录——决定了什么，待处理什么 | "上次我们做了什么？" |
-| 🔧 **思维工具** | 16 种结构化方法：第一性原理、费曼检验、逆向思维等 | "用第一性原理分析" |
-
-**不是记忆魔法。不是 AI 意识。只是更好用的结构化提示词。**
+| 模块 | 功能 |
+|------|------|
+| **AXIOM** | 五条不可违背的定律 — 始终生效 |
+| **FOCUS** | 关键词触发知识加载 — 知道当前在哪个项目 |
+| **CONTEXT** | AI 可写的项目日志 — 跨会话状态持久化 |
+| **RULES** | 标准指令 — 你说一次，AI 永远遵守 |
+| **THINK** | 20 种结构化思维方法 — 需要时调用 |
 
 ---
 
@@ -43,35 +40,32 @@
 
 ### 第一步：复制 `brain/` 到你的项目
 
-| AI 工具 | 存放位置 | 激活方式 |
-|---------|---------|---------|
-| **Claude Code** | `.claude/brain/` | 在 `CLAUDE.md` 添加：`Read .claude/brain/ACTIVATE.md first` |
-| **Cursor** | `.cursor/brain/` | 在 `.cursor/rules/mindkit.mdc` 引用 |
-| **WorkBuddy** | `.workbuddy/brain/` | 使用 Skill 触发 |
+| AI 工具 | 位置 | 激活方式 |
+|---------|------|---------|
+| **Claude Code** | `.claude/brain/` | 加入 `CLAUDE.md` |
+| **Cursor** | `.cursor/brain/` | 加入 `.cursor/rules/` |
+| **WorkBuddy** | `.workbuddy/brain/` | Skill 触发 |
 | **任何 LLM** | 任意位置 | 告诉它："先读 brain/ACTIVATE.md" |
 
-### 第二步：添加你的域
+### 第二步：填写你的项目知识
 
-```bash
-pip install -r tools/requirements.txt
-python tools/domain_generator.py --name "我的项目" --keywords "react,api,后端"
-```
+复制 `brain/domains/_TEMPLATE.md` → 你的域文件，然后加入 `FOCUS.md`。
 
 ### 第三步：开始对话
 
-> "这是我用 Next.js 和 Prisma 的项目。"
+> "这是我的 React 项目，用 Next.js 和 Prisma。"
 
-AI 自动加载你的项目知识，不需要额外提示。
+AI 自动加载你的项目知识。Axiom 五定律始终生效。
 
 ---
 
-## 单文件版（无文件访问）
+## 单文件版
 
-使用 ChatGPT、Gemini 等不支持文件的 AI：
+ChatGPT、Gemini 等不支持文件的 AI：
 
-1. 打开 [`mindkit-single.md`](mindkit-single.md)
-2. 复制全部内容到 AI 的"自定义指令"或"系统提示词"
-3. 完成 — 框架从文本中直接生效
+1. 打开 `axiom-single.md`
+2. 复制到 AI 的"自定义指令"
+3. 完成
 
 ---
 
@@ -79,37 +73,30 @@ AI 自动加载你的项目知识，不需要额外提示。
 
 ```
 brain/
-├── ACTIVATE.md       ⭐ 入口 — AI 首先读取
-├── FOCUS.md          🎯 关键词 → 域知识映射
-├── INTUITION.md      ⚡ 你的标准指令（模式规则）
-├── EPISODES.md       📋 共享每日日志（决定+待处理）
-├── THINKKIT.md       🔧 16 种结构化思维方法
-├── META.md           🛡️ 安全规则 — 始终生效，不可绕过
-└── domains/          📦 你的项目知识
-    ├── _TEMPLATE.md
-    └── example_*.md
+├── ACTIVATE.md       ⭐ 入口 — 每次首先读取
+├── AXIOM.md         ⚖️ 五条定律 — 始终生效，不可绕过
+├── FOCUS.md         🎯 关键词 → 域知识映射
+├── CONTEXT.md       📝 AI 可写项目日志（状态跨会话持久化）
+├── RULES.md         📋 标准指令（你写，AI 遵守）
+├── THINK.md         🧠 20 种思维方法（按需调用）
+└── domains/         📦 你的项目知识
 ```
 
-**加载策略**：`ACTIVATE.md`（约 500 tokens）是唯一必读文件。其他模块按需加载。
+---
+
+## 为什么需要 Axiom
+
+大多数 AI 问题不是智能问题，是判断力问题：
+
+> *"让它清理日志，它删了生产数据。"*
+> *"它总是忘记我的项目规范。"*
+> *"它没问就发了邮件。"*
+
+**Axiom 解决判断力问题。** 五定律防止破坏。FOCUS 和 CONTEXT 提供连续性。RULES 捕获偏好。THINK 结构化推理。
 
 ---
 
-## 兼容性
-
-| LLM / 工具 | 支持 | 最佳场景 |
-|-----------|------|---------|
-| Claude Code | ✅ | 原生文件访问 |
-| Cursor | ✅ | 基于规则的激活 |
-| WorkBuddy | ✅ | Skill 触发激活 |
-| GPT-4 / o1 / o3 | ✅ | 通过 mindkit-single.md |
-| Gemini | ✅ | 通过 mindkit-single.md |
-| Qwen | ✅ | 结构化中文提示词 |
-| DeepSeek | ✅ | 简洁结构化格式 |
-| 任何 LLM API | ✅ | 粘贴到 system prompt |
-
----
-
-## 进阶工具
+## 工具
 
 ```bash
 pip install -r tools/requirements.txt
@@ -121,16 +108,10 @@ python tools/sync_manager.py --personal /path --direction pull
 
 ---
 
-## 贡献
-
-欢迎贡献！详见 [docs/contributing.md](docs/contributing.md)。
-
----
-
 ## 许可证
 
 MIT — 随便用。
 
 ---
 
-*MindKit：因为"想想看"在你有思考工具的时候效果更好。*
+*Axiom：让 AI 可靠的定律。*

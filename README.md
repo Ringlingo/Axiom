@@ -1,91 +1,76 @@
-# MindKit
+# Axiom
 
-> **Give your AI a working brain — not a database, not a plugin, just better thinking.**
+> **The cognitive layer that makes AI reliable.**
 
-[![CI](https://github.com/RingLingo/mindkit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/RingLingo/mindkit/actions/workflows/ci.yml)
+[![CI](https://github.com/RingLingo/axiom/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/RingLingo/axiom/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
-[![Last Commit](https://img.shields.io/github/last-commit/RingLingo/mindkit/main.svg)](https://github.com/RingLingo/mindkit/commits/main)
+[![Last Commit](https://img.shields.io/github/last-commit/RingLingo/axiom/main.svg)](https://github.com/RingLingo/axiom/commits/main)
 
-**MindKit** is a zero-dependency cognitive engineering framework for AI agents. It gives any LLM structured attention, repeatable patterns, experience indexing, and safety guardrails — using only Markdown files you control.
+**Axiom** is a zero-dependency cognitive layer for AI agents and assistants. It makes AI interactions predictable, safe, and consistent — using only Markdown files you control.
 
-Think of it as **upgrading your AI's RAM**: instead of starting every conversation from scratch, your AI remembers what matters, thinks when you ask it to, and never surprises you with destructive actions.
-
----
-
-## The Problem
-
-Most AI conversations start with the same frustration:
-
-> *"I told you about this project last week."*
-> *"You keep forgetting my preferences."*
-> *"Why did you delete that file without asking?"*
-
-The root cause: **AI has no persistent context layer**. Every session starts at zero.
-
-**Existing solutions** require databases, APIs, or cloud services. That's overhead you don't need.
-
-**MindKit** solves this with plain Markdown files. No dependencies. No backend. Just better AI.
+Think of it as **installing good judgment into your AI**: it knows what not to destroy, what to remember, how to think through problems, and when to ask instead of assume.
 
 ---
 
-## What MindKit Gives You
+## The 5 Laws
 
-| Module | What It Does | Trigger |
-|--------|-------------|---------|
-| 🛡️ **Safety Guardrails** | Blocks destructive operations — delete, overwrite, external send always require confirmation | Cannot be bypassed |
-| 🎯 **Focus Engine** | Activates relevant project knowledge when you mention keywords | Say "React" → loads your React knowledge |
-| ⚡ **Pattern Rules** | Standing instructions you write once — the AI follows them every time | "When I say X, always do Y" |
-| 📋 **Daily Log** | A shared notepad you and the AI write — what was decided, what's open | "What did we do last time?" |
-| 🔧 **Thinking Tools** | 16 structured methods: First Principles, Feynman Test, Reverse Thinking, etc. | "Use first principles on this" |
+These are not guidelines. They are the laws of every Axiom-powered AI.
 
-**No memory magic. No AI consciousness. Just better structured prompting that works.**
+| Law | What It Means |
+|-----|--------------|
+| **I: Preservation** | Never destroy without explicit confirmation |
+| **II: Boundaries** | Never touch system files or unauthorized data |
+| **III: Truth** | Never lie, hide uncertainty, or fabricate |
+| **IV: Context** | Never forget project knowledge or user preferences |
+| **V: Authorization** | External action requires explicit approval |
+
+These five laws make the difference between an AI that is *capable* and an AI that is *trustworthy*.
+
+---
+
+## What Axiom Gives You
+
+| Module | What It Does |
+|--------|-------------|
+| **AXIOM** | 5 unbreakable laws — always active, cannot be bypassed |
+| **FOCUS** | Keyword-triggered knowledge loading — know what project you're in |
+| **CONTEXT** | AI-writable living log — project state persists across sessions |
+| **RULES** | Standing instructions — you say it once, AI follows it always |
+| **THINK** | 20 structured thinking methods — when analysis is needed |
 
 ---
 
 ## Quick Start
 
-### One-line summary
+### 1. Copy `brain/` into your project
 
-Copy `brain/` into your project → tell your AI to read `ACTIVATE.md` → done.
-
-### Step 1: Copy `brain/` to your project
-
-| AI Tool | Where to put `brain/` | How to activate |
-|---------|----------------------|-----------------|
-| **Claude Code** | `.claude/brain/` | Add `Read .claude/brain/ACTIVATE.md first` to `CLAUDE.md` |
-| **Cursor** | `.cursor/brain/` | Reference in `.cursor/rules/mindkit.mdc` |
-| **WorkBuddy** | `.workbuddy/brain/` | Use the skill trigger |
+| AI Tool | Where | How |
+|---------|-------|-----|
+| **Claude Code** | `.claude/brain/` | Add to `CLAUDE.md` |
+| **Cursor** | `.cursor/brain/` | Add to `.cursor/rules/` |
+| **WorkBuddy** | `.workbuddy/brain/` | Skill trigger |
 | **Any LLM** | Anywhere | Tell it: "Read brain/ACTIVATE.md first" |
 
-### Step 2: Add your domain
+### 2. Fill in your project knowledge
 
-```bash
-# Option A: Use the generator (after pip install)
-pip install -r tools/requirements.txt
-python tools/domain_generator.py --name "my_project" --keywords "react,api,backend"
+Copy `brain/domains/_TEMPLATE.md` → your domain file, then add to `FOCUS.md`.
 
-# Option B: Manual
-cp brain/domains/_TEMPLATE.md brain/domains/my_project.md
-# Edit my_project.md with your project knowledge
-# Add domain definition to brain/FOCUS.md
-```
+### 3. Start talking
 
-### Step 3: Start talking
+> "This is my React project, using Next.js and Prisma."
 
-> "Here's my React project, it uses Next.js and Prisma."
-
-AI automatically loads your domain knowledge. No extra prompting needed.
+AI automatically loads your domain knowledge. AXIOM laws are always active.
 
 ---
 
-## Single-File Version (No File Access)
+## Single-File Version
 
-If you're using ChatGPT, Gemini, or any LLM without a file system:
+No file access? ChatGPT, Gemini, or any LLM:
 
-1. Open [`mindkit-single.md`](mindkit-single.md)
-2. Copy its content into your AI's "Custom Instructions" or "System Prompt"
-3. Done — the framework works from text alone
+1. Open `axiom-single.md`
+2. Copy into your AI's "Custom Instructions"
+3. Done
 
 ---
 
@@ -93,33 +78,44 @@ If you're using ChatGPT, Gemini, or any LLM without a file system:
 
 ```
 brain/
-├── ACTIVATE.md       ⭐ Entry point — AI reads this first
-├── FOCUS.md          🎯 Keyword → domain knowledge mapping
-├── INTUITION.md      ⚡ Your standing instructions (pattern rules)
-├── EPISODES.md       📋 Shared daily log (decisions + open issues)
-├── THINKKIT.md       🔧 16 structured thinking methods
-├── META.md           🛡️ Safety rules — always active, cannot be bypassed
-└── domains/          📦 Your project knowledge
+├── ACTIVATE.md       ⭐ Entry point — read first, every session
+├── AXIOM.md         ⚖️ 5 laws — always active, cannot be bypassed
+├── FOCUS.md         🎯 Keyword → domain knowledge mapping
+├── CONTEXT.md       📝 AI-writable project log (state persists)
+├── RULES.md         📋 Standing instructions (you write, AI follows)
+├── THINK.md         🧠 20 thinking methods (on demand)
+└── domains/         📦 Your project knowledge
     ├── _TEMPLATE.md
     └── example_*.md
 ```
 
-**Loading strategy**: `ACTIVATE.md` (~500 tokens) is the only required read. Everything else loads on demand.
+**Axiom is loaded once. It works forever.**
+
+---
+
+## Why Axiom Exists
+
+Most AI problems are not about intelligence. They are about judgment:
+
+> *"I told it to clean up the logs and it deleted production data."*
+> *"It keeps forgetting my project conventions."*
+> *"It tried to send an email without asking."*
+
+**AXIOM solves the judgment problem.** The five laws prevent destruction. FOCUS and CONTEXT provide continuity. RULES captures preferences. THINK structures reasoning.
 
 ---
 
 ## Compatibility
 
-| LLM / Tool | Works? | Best for |
+| LLM / Tool | Works? | Best For |
 |-----------|--------|---------|
-| Claude Code | ✅ | Native file access, best implicit context |
+| Claude Code | ✅ | Best — native file access |
 | Cursor | ✅ | Rule-based activation |
-| WorkBuddy | ✅ | Skill-triggered activation |
-| GPT-4 / o1 / o3 | ✅ | Via mindkit-single.md |
-| Gemini | ✅ | Via mindkit-single.md |
-| Qwen | ✅ | Structured Chinese prompts |
+| WorkBuddy | ✅ | Skill trigger |
+| GPT-4 / o1 / o3 | ✅ | Via axiom-single.md |
+| Gemini | ✅ | Via axiom-single.md |
+| Qwen | ✅ | Structured prompts |
 | DeepSeek | ✅ | Brief structured formats |
-| Any LLM API | ✅ | Paste framework into system prompt |
 
 ---
 
@@ -128,24 +124,23 @@ brain/
 ```bash
 pip install -r tools/requirements.txt
 
-# Validate your brain/ configuration
-python tools/validator.py
-
-# Generate a new domain from template
-python tools/domain_generator.py --name "Marketing" --keywords "campaign,analytics"
-
-# Sync personal ↔ OSS version
-python tools/sync_manager.py --personal /path/to/project --direction pull
+python tools/validator.py              # Validate your brain/ setup
+python tools/domain_generator.py \
+  --name "my_project" \
+  --keywords "react,api,typescript"
+python tools/sync_manager.py \
+  --personal /path \
+  --direction pull
 ```
 
 ---
 
 ## Contributing
 
-We welcome contributions! See [docs/contributing.md](docs/contributing.md).
+See `docs/contributing.md`.
 
-Areas where we need help:
-- 🌍 Translations (中文, 日本語, ...)
+We especially welcome:
+- 🌍 Translations
 - 📦 New domain templates
 - 🔧 Tool improvements
 - 📊 Real-world use cases
@@ -158,4 +153,4 @@ MIT — use it however you want.
 
 ---
 
-*MindKit: Because "think about it" works better when you have tools for thinking.*
+*Axiom: The laws that make AI trustworthy.*

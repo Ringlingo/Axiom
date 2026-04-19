@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MindKit Brain Validator
+Axiom Brain Validator
 Validate the structure and content of a brain/ directory.
 
 Usage:
@@ -14,28 +14,28 @@ from pathlib import Path
 
 REQUIRED_FILES = {
     "ACTIVATE.md": {
-        "sections": ["Startup Sequence", "Safety Rules", "File Map"],
+        "sections": ["What You Have", "Startup Sequence"],
         "description": "Entry point — the first file AI reads",
     },
+    "AXIOM.md": {
+        "sections": ["The Five Laws"],
+        "description": "5 unbreakable laws — always active",
+    },
     "FOCUS.md": {
-        "sections": ["Core Mechanism", "Project Domain Definitions"],
-        "description": "Attention engine + domain definitions",
+        "sections": ["How FOCUS Works", "Your Project Domains"],
+        "description": "Keyword → domain knowledge mapping",
     },
-    "THINKKIT.md": {
-        "sections": ["Tool Catalog"],
-        "description": "16 thinking tools",
+    "CONTEXT.md": {
+        "sections": ["What This File Is", "Update Protocol"],
+        "description": "AI-writable project log",
     },
-    "INTUITION.md": {
-        "sections": ["Active Rules", "LTP"],
-        "description": "Intuition rules with LTP enhancement",
+    "RULES.md": {
+        "sections": ["How RULES Work", "Your Rules"],
+        "description": "Standing instructions",
     },
-    "EPISODES.md": {
-        "sections": ["Mechanism", "Index Format"],
-        "description": "Episodic buffer — daily experience index",
-    },
-    "META.md": {
-        "sections": ["Hard Rules"],
-        "description": "Safety guardrails",
+    "THINK.md": {
+        "sections": ["The 20 Methods"],
+        "description": "20 thinking methods",
     },
 }
 
@@ -93,7 +93,7 @@ def check_domains_dir(brain_path: Path) -> None:
 
 
 def run_validation(brain_path: Path) -> bool:
-    print(f"Validating MindKit brain at: {brain_path}")
+    print(f"Validating Axiom brain at: {brain_path}")
     print()
 
     for filename, spec in REQUIRED_FILES.items():
@@ -133,7 +133,7 @@ def run_validation(brain_path: Path) -> bool:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Validate MindKit brain/ directory")
+    parser = argparse.ArgumentParser(description="Validate Axiom brain/ directory")
     parser.add_argument("--path", default=None, help="Path to brain/ directory (default: auto-detect)")
     args = parser.parse_args()
 

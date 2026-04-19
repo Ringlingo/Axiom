@@ -1,131 +1,101 @@
-# MindKit 开发目的
+# Axiom — Why It Exists
 
-> **不是模拟大脑，而是借鉴认知科学原理，构建更好的 AI 人机交互工程。**
-
----
-
-## 一、起点：一个真实的痛点
-
-每次用 AI 写代码、写小说、做研究，都会遇到同样的问题：
-
-> *"上周我告诉你这个项目用 Tailwind，不要用 CSS Modules。"*
-> *"你又忘了，我解释过 3 次了。"*
-
-**AI 的上下文是短暂的**。每次会话都是重新开始。没有持久化的工作记忆。
+> **Not a more powerful AI. A more reliable AI.**
 
 ---
 
-## 二、现有方案的局限
+## The Problem
 
-| 方案 | 问题 |
-|------|------|
-| 数据库 + API（mem0/Letta） | 需要后端基础设施，上下文窗口管理复杂 |
-| 简单 CLAUDE.md | 只是静态描述，没有触发机制，没有分层加载 |
-| Prompt engineering | 每次都要重复，效果不稳定 |
+AI is increasingly capable. But capability without judgment is dangerous.
 
----
+The same AI that can write brilliant code will delete your production database if you ask it to "clean up."
 
-## 三、MindKit 的思路
+The same AI that can maintain context will forget your project conventions after every session.
 
-### 不是模拟大脑
+The same AI that can reason will execute a destructive operation because it didn't stop to ask.
 
-MindKit **不声称 AI 有意识**，也不声称"像人脑一样工作"。这类说法容易误导，也不科学。
-
-### 而是：借鉴认知科学原理
-
-认知科学（尤其是 Kahneman 的双过程理论、Baddeley 的工作记忆模型）早就研究过：
-
-- **注意力是有限的** → Focus Engine 解决"加载什么"
-- **重复会变成自动** → Intuition Rules 解决"重复的模式"
-- **近期事件权重更高** → Episodic Buffer 解决"记住了什么"
-- **危险操作需要确认** → Safety Guardrails 解决"防止破坏"
-
-这些是**经过验证的认知现象**，不是神经科学的精确模拟。
+**The problem is not intelligence. The problem is judgment.**
 
 ---
 
-## 四、与脑科学的对应关系
+## The Axiom Solution
 
-| MindKit 模块 | 认知科学来源 | 功能 |
-|-------------|------------|------|
-| FOCUS.md | Baddeley 工作记忆模型 | 决定当前加载哪些知识 |
-| INTUITION.md | Kahneman 双过程理论（系统1） | 重复模式→快速自动反应 |
-| EPISODES.md | 情景记忆索引 | 记录每日经历，按时间检索 |
-| THINKKIT.md | 前额叶执行功能 | 结构化问题解决 |
-| META.md | 启发式与偏见研究 | 安全护栏 |
+Axiom installs five laws that cannot be bypassed — making AI interactions predictable.
 
----
+```
+Law I:  Preservation     → Never destroy without confirmation
+Law II: Boundaries      → Never touch unauthorized systems
+Law III: Truth          → Never lie or hide uncertainty
+Law IV: Context         → Never forget project knowledge
+Law V:  Authorization  → External action requires approval
+```
 
-## 五、设计原则
-
-### 1. 零依赖
-
-纯 Markdown，不依赖：
-- Python 环境（非必须）
-- 数据库
-- API 调用
-- 特殊软件
-
-只要能读取文本文件的环境，MindKit 就能工作。
-
-### 2. 按需加载
-
-`ACTIVATE.md` 是唯一的必读文件（约 500 tokens）。其他模块按需加载，不浪费上下文空间。
-
-### 3. 渐进采用
-
-可以只用一个模块，也可以用全部。添加域很容易，删除也很容易。
-
-### 4. 可验证
-
-每个模块的行为都可以被观察和验证。MindKit 说"AI 会自动加载相关域"——你可以测试，真的会。
+These five laws address the most common ways AI fails in practice.
 
 ---
 
-## 六、不是什么
+## What Axiom Is Not
 
-### 不是插件或软件
-MindKit 不能"安装"到 AI 里。它是结构化的文本文件，告诉 AI 如何组织自己的响应。
+- **Not a memory system** — Axiom doesn't store conversation history
+- **Not an agent framework** — Axiom doesn't execute tools or browse the web
+- **Not a model** — Axiom works with any LLM, not just one
+- **Not a plugin** — Axiom is plain Markdown files you control
 
-### 不是数据库
-没有查询语言，没有索引优化。只是 Markdown，AI 自己理解和处理。
-
-### 不是 AI 意识
-框架给 AI 提供**结构**，不是赋予它智能或意识。AI 按照你设计的结构工作。
+Axiom is a **behavioral layer** that sits between the user and the AI.
 
 ---
 
-## 七、适用场景
+## Design Principles
 
-### 适合使用 MindKit
-- 长期项目（跨多会话协作）
-- 有明确的知识边界（技术栈、领域知识）
-- 需要积累经验（反复遇到的问题）
-- 高安全性要求（防止误操作）
+### 1. Zero Dependencies
+Plain Markdown. No Python required. No API calls. Works with any AI that can read text.
 
-### 不适合
-- 一次性任务（不需要记忆）
-- 纯创意工作（没有固定知识边界）
-- 无法修改 AI 配置的环境
-- 极短上下文（没有空间加载框架）
+### 2. Laws Cannot Be Overridden
+This is the most important design choice. AXIOM's five laws are not guidelines — they are inviolable. If Axiom allowed overrides "for convenience," it would stop being Axiom.
 
----
+### 3. Persistence Through Structure
+CONTEXT.md is AI-writable because the AI is the one who notices when something important happened. A good AI should update the project log without being asked.
 
-## 八、未来方向
-
-- **更多域模板**：贡献者添加的示例域
-- **工具改进**：`domain_generator.py` 功能增强
-- **CI 自动化**：每次 PR 自动验证框架结构
-- **社区实践**：真实使用案例收集
+### 4. Progressive Loading
+ACTIVATE.md is the only required read. Everything else loads on demand.
 
 ---
 
-## 结语
+## The Five Laws in Detail
 
-> **"think about it" 在你有思考工具的时候效果更好。**
+**Law I — Preservation**
+Before destroying anything (files, databases, records), the AI must:
+1. List what will be affected
+2. Wait for explicit confirmation
+3. Confirm the action one more time before executing
 
-MindKit 就是那套工具。它不声称模拟大脑，只借鉴认知科学中经过验证的原理，让 AI 的每次响应都更可靠、更高效。
+**Law II — Boundaries**
+The AI has no access to system files, OS configuration, other users' directories, or external URLs without explicit permission.
+
+**Law III — Truth**
+The AI must admit when it doesn't know something, when it's uncertain, or when it's about to guess. Fabrication is never acceptable.
+
+**Law IV — Context**
+Project knowledge and user preferences loaded from FOCUS and CONTEXT are always in effect. The AI should not re-ask for information that has already been provided.
+
+**Law V — Authorization**
+Any action that affects the outside world (email, API calls, deployment, messages) requires the user's explicit confirmation before execution.
 
 ---
 
-*最后更新：2026-04-19*
+## Future Direction
+
+- Domain templates from the community
+- CI integration for axiom-validator in GitHub Actions
+- More THINK methods based on real usage
+- Internationalization (translations welcome)
+
+---
+
+## License
+
+MIT
+
+---
+
+*Axiom: The laws that make AI trustworthy.*

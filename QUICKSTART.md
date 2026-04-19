@@ -1,80 +1,62 @@
-# MindKit Quick Start — 3 Steps to a Focused AI
+# Axiom Quick Start — 3 Steps to a Reliable AI
 
-## Step 1: Copy the Brain
+## Step 1: Install the Brain
 
-Copy `brain/` into your project. Where it goes depends on your AI tool:
+Copy `brain/` into your project. Where depends on your AI tool:
 
 ### Claude Code
-
 ```bash
-cp -r brain/ /path/to/your-project/.claude/brain/
+cp -r brain/ /path/to/project/.claude/brain/
 ```
-
 Add to `CLAUDE.md`:
 ```
 Read .claude/brain/ACTIVATE.md first at the start of every conversation.
 ```
 
 ### Cursor
-
 ```bash
-cp -r brain/ /path/to/your-project/.cursor/brain/
+cp -r brain/ /path/to/project/.cursor/brain/
 ```
-
-Create `.cursor/rules/mindkit.mdc`:
+Create `.cursor/rules/axiom.mdc`:
 ```markdown
 ---
-description: MindKit cognitive framework
+description: Axiom cognitive layer
 globs:
 alwaysApply: true
 ---
-
 Read .cursor/brain/ACTIVATE.md first at the start of every conversation.
 ```
 
 ### Any LLM (ChatGPT, Gemini, etc.)
+Copy the content of `axiom-single.md` into your AI's "Custom Instructions".
 
-Copy the content of `mindkit-single.md` into your AI's Custom Instructions.
+## Step 2: Add Your Domain
 
-## Step 2: Add Your First Domain
-
-1. Copy `brain/domains/_TEMPLATE.md` → `brain/domains/my_domain.md`
-2. Fill in keywords and core knowledge
-3. Add the domain definition to `brain/FOCUS.md`
-
-Example:
+1. Copy `brain/domains/_TEMPLATE.md` → `brain/domains/your_project.md`
+2. Fill in your project knowledge
+3. Add to `brain/FOCUS.md`:
 ```yaml
-domain: web_dev
-name: "Web Development"
-icon: "💻"
-keywords: [react, vue, css, api, frontend, backend]
+domain: my_project
+keywords: [your, keywords, here]
+knowledge_file: domains/my_project.md
 ```
 
-## Step 3: Use It
+## Step 3: Start
 
-- **Domain focus**: Mention your keywords → AI concentrates on relevant knowledge
-- **Thinking tools**: "Use First Principles to analyze this" → structured output
-- **Intuition rules**: After repeating patterns, add quick-response rules to INTUITION.md
-- **Safety**: Destructive operations always require your confirmation
+That's it. Three steps. Five minutes.
 
-### Quick Test
+Start a conversation:
+> "This is my project. It uses [describe briefly]."
 
-Start a conversation and say: "Tell me what you know about [one of your domain keywords]"
+The AI loads your domain knowledge. Axiom's five laws are always active.
 
-If the AI references domain-specific knowledge from your domain file, it's working.
+---
 
-## Optional: Advanced Mode
+## Advanced Tools
 
 ```bash
 pip install -r tools/requirements.txt
 
-# Generate a domain from template
-python tools/domain_generator.py --name "My Project" --keywords "code,dev,api"
-
-# Validate your brain/ setup
+python tools/domain_generator.py --name "My Project" --keywords "react,typescript"
 python tools/validator.py
 ```
-
----
-
-_That's it. Three steps. Five minutes._
