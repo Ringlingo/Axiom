@@ -1,29 +1,53 @@
 # MindKit
 
-> **Structured prompts that make your AI think better.**
+> **Give your AI a working brain — not a database, not a plugin, just better thinking.**
 
-A **zero-dependency, pure Markdown** framework that gives any LLM focused attention, structured thinking, indexed memory, and reliable safety guardrails.
+[![CI](https://github.com/RingLingo/mindkit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/RingLingo/mindkit/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![Last Commit](https://img.shields.io/github/last-commit/RingLingo/mindkit/main.svg)](https://github.com/RingLingo/mindkit/commits/main)
 
-Not a database. Not a plugin. Just well-organized prompts — and they actually work.
+**MindKit** is a zero-dependency cognitive engineering framework for AI agents. It gives any LLM structured attention, repeatable patterns, experience indexing, and safety guardrails — using only Markdown files you control.
+
+Think of it as **upgrading your AI's RAM**: instead of starting every conversation from scratch, your AI remembers what matters, thinks when you ask it to, and never surprises you with destructive actions.
 
 ---
 
-## What It Does
+## The Problem
 
-Four integrated modules:
+Most AI conversations start with the same frustration:
 
-| Module | What It Gives You | Example |
-|--------|------------------|---------|
-| 🎯 **Focus Engine** | Domain-based attention | Mention your keywords → AI loads relevant knowledge |
-| ⚡ **Intuition Rules** | Instant patterns from repetition | After 3+ uses, responses become automatic (LTP mechanism) |
-| 📋 **Episodic Buffer** | Daily experience index | Recent events weighted higher in retrieval |
-| 🛡️ **Safety Guardrails** | Hard rules against destructive ops | Delete/overwrite → always requires confirmation |
+> *"I told you about this project last week."*
+> *"You keep forgetting my preferences."*
+> *"Why did you delete that file without asking?"*
+
+The root cause: **AI has no persistent context layer**. Every session starts at zero.
+
+**Existing solutions** require databases, APIs, or cloud services. That's overhead you don't need.
+
+**MindKit** solves this with plain Markdown files. No dependencies. No backend. Just better AI.
+
+---
+
+## What MindKit Gives You
+
+| Module | What It Does | Trigger |
+|--------|-------------|---------|
+| 🎯 **Focus Engine** | Activates relevant project knowledge when you mention keywords | Say "React" → loads your React knowledge |
+| ⚡ **Intuition Rules** | Repeats become reflexes — 3 uses → automatic response | Repeated patterns trigger without prompting |
+| 📋 **Episodic Buffer** | Indexes what happened each day, recent events weighted higher | "What did we do on Thursday?" |
+| 🛡️ **Safety Guardrails** | Blocks destructive operations, always asks confirmation | Delete / overwrite / external send |
+| 🔧 **Thinking Tools** | 16 structured methods: First Principles, Feynman Test, Reverse Thinking, etc. | "Use first principles on this" |
 
 ---
 
 ## Quick Start
 
-### 1. Copy `brain/` to your project
+### One-line summary
+
+Copy `brain/` into your project → tell your AI to read `ACTIVATE.md` → done.
+
+### Step 1: Copy `brain/` to your project
 
 | AI Tool | Where to put `brain/` | How to activate |
 |---------|----------------------|-----------------|
@@ -32,32 +56,34 @@ Four integrated modules:
 | **WorkBuddy** | `.workbuddy/brain/` | Use the skill trigger |
 | **Any LLM** | Anywhere | Tell it: "Read brain/ACTIVATE.md first" |
 
-### 2. Add your domain
+### Step 2: Add your domain
 
-1. Copy `brain/domains/_TEMPLATE.md` → `brain/domains/your_domain.md`
-2. Fill in keywords and core knowledge
-3. Add domain definition to `brain/FOCUS.md`
+```bash
+# Option A: Use the generator (after pip install)
+pip install -r tools/requirements.txt
+python tools/domain_generator.py --name "my_project" --keywords "react,api,backend"
 
-### 3. Done
+# Option B: Manual
+cp brain/domains/_TEMPLATE.md brain/domains/my_project.md
+# Edit my_project.md with your project knowledge
+# Add domain definition to brain/FOCUS.md
+```
 
-Your AI now has:
-- Domain-specific focus (mention your keywords → relevant knowledge activates)
-- Thinking tools (say "use First Principles" → structured analysis)
-- LTP-enhanced intuition (repeated patterns → faster responses)
-- Episodic memory index (recent experiences weighted by recency)
-- Safety guardrails (destructive operations always require confirmation)
+### Step 3: Start talking
 
-> 📖 See [TUTORIAL.md](TUTORIAL.md) for detailed usage guide.
+> "Here's my React project, it uses Next.js and Prisma."
+
+AI automatically loads your domain knowledge. No extra prompting needed.
 
 ---
 
-## The Single-File Version
+## Single-File Version (No File Access)
 
-If you use ChatGPT, Gemini, or any LLM without file access:
+If you're using ChatGPT, Gemini, or any LLM without a file system:
 
-1. Open `mindkit-single.md` (included in this repo)
+1. Open [`mindkit-single.md`](mindkit-single.md)
 2. Copy its content into your AI's "Custom Instructions" or "System Prompt"
-3. Done — the AI understands the framework from text alone
+3. Done — the framework works from text alone
 
 ---
 
@@ -67,56 +93,57 @@ If you use ChatGPT, Gemini, or any LLM without file access:
 brain/
 ├── ACTIVATE.md       ⭐ Entry point — AI reads this first
 ├── FOCUS.md          🎯 Attention engine + domain definitions
-├── EPISODES.md       📋 Episodic buffer — daily experience index
-├── INTUITION.md      ⚡ Intuition rules with LTP enhancement
-├── THINKKIT.md       🔧 Thinking tools (16 methods)
-├── META.md           🛡️ Safety guardrails
-└── domains/          📦 Your project domain knowledge
+├── EPISODES.md       📋 Daily experience index (recency-weighted)
+├── INTUITION.md      ⚡ Pattern→reflex rules (use-count reinforced)
+├── THINKKIT.md       🔧 16 structured thinking methods
+├── META.md           🛡️ Safety guardrails (hard rules)
+└── domains/          📦 Your project knowledge
     ├── _TEMPLATE.md
     └── example_*.md
 ```
 
-**Loading strategy**: ACTIVATE.md is the only required read. Everything else loads on demand.
+**Loading strategy**: `ACTIVATE.md` (~500 tokens) is the only required read. Everything else loads on demand.
 
 ---
 
 ## Compatibility
 
-| LLM | Best Approach | Notes |
-|-----|--------------|-------|
-| Claude | Natural language protocols | Best at implicit context |
-| GPT-4 | Structured YAML/tables | Prefers explicit instructions |
-| Gemini | Structured format | Long-context advantage |
-| Qwen | Structured + Chinese | Chinese-native |
-| DeepSeek | Brief structured | Clear reasoning chains |
+| LLM / Tool | Works? | Best for |
+|-----------|--------|---------|
+| Claude Code | ✅ | Native file access, best implicit context |
+| Cursor | ✅ | Rule-based activation |
+| WorkBuddy | ✅ | Skill-triggered activation |
+| GPT-4 / o1 / o3 | ✅ | Via mindkit-single.md |
+| Gemini | ✅ | Via mindkit-single.md |
+| Qwen | ✅ | Structured Chinese prompts |
+| DeepSeek | ✅ | Brief structured formats |
+| Any LLM API | ✅ | Paste framework into system prompt |
 
 ---
 
-## Advanced Mode (Optional)
+## Advanced Tools
 
 ```bash
 pip install -r tools/requirements.txt
 
-# Generate a new domain from template
-python tools/domain_generator.py --name "my_project" --keywords "code,dev,api"
-
 # Validate your brain/ configuration
 python tools/validator.py
 
-# Sync between personal and OSS versions
+# Generate a new domain from template
+python tools/domain_generator.py --name "Marketing" --keywords "campaign,analytics"
+
+# Sync personal ↔ OSS version
 python tools/sync_manager.py --personal /path/to/project --direction pull
 ```
-
-See [docs/advanced-mode.md](docs/advanced-mode.md) for details.
 
 ---
 
 ## Contributing
 
-We welcome contributions! See the [contributing guide](docs/contributing.md).
+We welcome contributions! See [docs/contributing.md](docs/contributing.md).
 
-Areas where we especially need help:
-- 🌍 Translations
+Areas where we need help:
+- 🌍 Translations (中文, 日本語, ...)
 - 📦 New domain templates
 - 🔧 Tool improvements
 - 📊 Real-world use cases
@@ -125,7 +152,7 @@ Areas where we especially need help:
 
 ## License
 
-MIT License — use it however you want.
+MIT — use it however you want.
 
 ---
 

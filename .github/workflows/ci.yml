@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install -r tools/requirements.txt
+
+      - name: Validate brain structure
+        run: python tools/validator.py
+
+      - name: Test domain generator
+        run: |
+          python tools/domain_generator.py --name "test_domain" --keywords "test,ci" --output /tmp/test_domain.md
+          test -f /tmp/test_domain.md && echo "Domain generator works" || exit 1
+          rm /tmp/test_domain.md
+
+      - name: Check required files exist
+        run: |
+          for file in brain/ACTIVATE.md brain/FOCUS.md brain/THINKKIT.md brain/INTUITION.md brain/EPISODES.md brain/META.md; do
+            test -f "$file" || { echo "Missing: $file"; exit 1; }
+          done
+          echo "All required files present"
+
+      - name: Check no hardcoded secrets
+        run: |
+          if grep -r "sk-\|api_key\|password\s*=" brain/ tools/ 2>/dev/null; then
+            echo "Potential secret found!"
+            exit 1
+          fi
+          echo "No hardcoded secrets detected"
+
+  lint-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check README exists and has content
+        run: |
+          test -s README.md || { echo "README is empty"; exit 1; }
+          test -s README_CN.md || { echo "README_CN is empty"; exit 1; }
+          echo "README files are non-empty"
+
+      - name: Validate no broken links in markdown
+        run: |
+          # Check that all relative links in README point to existing files
+          grep -oP ']\(\./[^)]+\)' README.md | sed 's/.//;s/.$//' | while read file; do
+            test -f "$file" || { echo "Broken link in README: $file"; exit 1; }
+          done
+          echo "All README links valid"

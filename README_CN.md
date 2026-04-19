@@ -1,63 +1,80 @@
 # MindKit
 
-> **结构化提示词，让你的 AI 思考得更好。**
+> **给你的 AI 装上真正能工作的认知架构——不是数据库，不是插件，只是更好的思考方式。**
 
-一个**零依赖、纯 Markdown** 的框架，让任何 LLM 获得聚焦注意力、LTP强化直觉、情景索引记忆和可靠的安全护栏。
+[![CI](https://github.com/RingLingo/mindkit/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/RingLingo/mindkit/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![Last Commit](https://img.shields.io/github/last-commit/RingLingo/mindkit/main.svg)](https://github.com/RingLingo/mindkit/commits/main)
 
-不是数据库。不是插件。只是一组组织良好的提示词——而且它们真的有效。
+**MindKit** 是一个零依赖的认知工程框架，让任何 LLM 获得结构化注意力、可复用模式、经验索引和安全护栏——全部基于你控制的 Markdown 文件。
+
+把它想象成**升级 AI 的内存**：不再每次从零开始，AI 会记住重要的事、主动思考你要它思考的问题、绝不擅自执行危险操作。
 
 ---
 
-## 它做什么
+## 解决什么问题
 
-四个协同工作的模块：
+大多数 AI 对话都以同样的挫败感开始：
 
-| 模块 | 给你什么 | 示例 |
-|------|---------|------|
-| 🎯 **注意力引擎** | 基于域的注意力 | 提到你的关键词 → AI 加载相关知识 |
-| ⚡ **直觉规则** | 来自重复的即时模式 | 3次以上使用后，反应变得更自动（LTP机制） |
-| 📋 **情景缓冲区** | 每日经历索引 | 近期事件在检索时权重更高 |
-| 🛡️ **安全护栏** | 针对破坏性操作的硬规则 | 删除/覆盖 → 始终需要确认 |
+> *"上周我说过了，这个项目用 Tailwind，不是 CSS Modules。"*
+> *"你又忘了我的偏好。"*
+> *"为什么你没问就删了那个文件？"*
+
+根本原因：**AI 没有持久化上下文层**。每次会话都从零开始。
+
+**现有方案**需要数据库、API 或云服务。MindKit 用纯 Markdown 解决，不需要任何基础设施。
+
+---
+
+## 五大模块
+
+| 模块 | 功能 | 触发方式 |
+|------|------|---------|
+| 🎯 **注意力引擎** | 提到关键词 → 自动加载相关项目知识 | 说"React" → 加载 React 知识 |
+| ⚡ **直觉规则** | 3次重复 → 自动触发，不需要再提醒 | 重复出现的模式自动形成反射 |
+| 📋 **情景缓冲区** | 记录每日关键事件，近期优先检索 | "周四我们做了什么？" |
+| 🛡️ **安全护栏** | 删除/覆盖/外发 → 必须确认 | 删除操作自动触发确认 |
+| 🔧 **思维工具** | 16 种结构化方法：第一性原理、费曼检验、逆向思维等 | "用第一性原理分析" |
 
 ---
 
 ## 快速开始
 
-### 1. 将 `brain/` 复制到你的项目
+### 第一步：复制 `brain/` 到你的项目
 
 | AI 工具 | 存放位置 | 激活方式 |
 |---------|---------|---------|
-| **Claude Code** | `.claude/brain/` | 在 `CLAUDE.md` 中添加 `Read .claude/brain/ACTIVATE.md first` |
-| **Cursor** | `.cursor/brain/` | 在 `.cursor/rules/mindkit.mdc` 中引用 |
+| **Claude Code** | `.claude/brain/` | 在 `CLAUDE.md` 添加：`Read .claude/brain/ACTIVATE.md first` |
+| **Cursor** | `.cursor/brain/` | 在 `.cursor/rules/mindkit.mdc` 引用 |
 | **WorkBuddy** | `.workbuddy/brain/` | 使用 Skill 触发 |
 | **任何 LLM** | 任意位置 | 告诉它："先读 brain/ACTIVATE.md" |
 
-### 2. 添加你的域
+### 第二步：添加你的域
 
-1. 复制 `brain/domains/_TEMPLATE.md` → `brain/domains/your_domain.md`
-2. 填写关键词和核心知识
-3. 将域定义添加到 `brain/FOCUS.md`
+```bash
+# 安装工具（可选）
+pip install -r tools/requirements.txt
 
-### 3. 完成
+# 从模板生成新域
+python tools/domain_generator.py --name "我的项目" --keywords "react,api,后端"
+```
 
-你的 AI 现在有了：
-- 域特定聚焦（提到你的关键词 → 相关知识激活）
-- 思维工具（说"用第一性原理" → 结构化分析）
-- LTP增强直觉（重复模式 → 反应更快）
-- 情景记忆索引（近期经历权重更高）
-- 安全护栏（破坏性操作必须确认）
+### 第三步：开始对话
 
-> 📖 详见 [TUTORIAL.md](TUTORIAL.md) 获取详细使用教程。
+> "这是我用 Next.js 和 Prisma 的项目。"
+
+AI 自动加载你的项目知识，不需要额外提示。
 
 ---
 
-## 单文件版
+## 单文件版（无文件访问）
 
-如果你使用 ChatGPT、Gemini 或任何不支持文件访问的 LLM：
+使用 ChatGPT、Gemini 等不支持文件的 AI：
 
-1. 打开 `mindkit-single.md`（包含在本仓库中）
-2. 将其内容复制到 AI 的"自定义指令"或"系统提示词"
-3. 完成 — AI 从文本中理解框架
+1. 打开 [`mindkit-single.md`](mindkit-single.md)
+2. 复制全部内容到 AI 的"自定义指令"或"系统提示词"
+3. 完成 — 框架从文本中直接生效
 
 ---
 
@@ -67,56 +84,57 @@
 brain/
 ├── ACTIVATE.md       ⭐ 入口 — AI 首先读取
 ├── FOCUS.md          🎯 注意力引擎 + 域定义
-├── EPISODES.md       📋 情景缓冲区 — 每日经历索引
-├── INTUITION.md      ⚡ 直觉规则，LTP强化
-├── THINKKIT.md       🔧 思维工具（16种方法）
-├── META.md           🛡️ 安全护栏
-└── domains/          📦 项目域知识
+├── EPISODES.md       📋 每日经历索引（近因效应）
+├── INTUITION.md      ⚡ 模式→反射规则（使用次数强化）
+├── THINKKIT.md       🔧 16 种结构化思维方法
+├── META.md           🛡️ 安全护栏（硬性规则）
+└── domains/          📦 你的项目知识
     ├── _TEMPLATE.md
     └── example_*.md
 ```
 
-**加载策略**：ACTIVATE.md 是唯一必读文件。其余按需加载。
+**加载策略**：`ACTIVATE.md`（约 500 tokens）是唯一必读文件。其他模块按需加载。
 
 ---
 
 ## 兼容性
 
-| LLM | 最佳方式 | 备注 |
-|-----|---------|------|
-| Claude | 自然语言协议 | 最擅长隐式上下文 |
-| GPT-4 | 结构化 YAML/表格 | 偏好显式指令 |
-| Gemini | 结构化格式 | 长上下文优势 |
-| Qwen | 结构化 + 中文 | 中文原生 |
-| DeepSeek | 简洁结构化 | 清晰的推理链 |
+| LLM / 工具 | 支持 | 最佳场景 |
+|-----------|------|---------|
+| Claude Code | ✅ | 原生文件访问，最佳隐式上下文 |
+| Cursor | ✅ | 基于规则的激活 |
+| WorkBuddy | ✅ | Skill 触发激活 |
+| GPT-4 / o1 / o3 | ✅ | 通过 mindkit-single.md |
+| Gemini | ✅ | 通过 mindkit-single.md |
+| Qwen | ✅ | 结构化中文提示词 |
+| DeepSeek | ✅ | 简洁结构化格式 |
+| 任何 LLM API | ✅ | 粘贴到 system prompt |
 
 ---
 
-## 进阶模式（可选）
+## 进阶工具
 
 ```bash
 pip install -r tools/requirements.txt
 
-# 从模板生成新域
-python tools/domain_generator.py --name "我的项目" --keywords "代码,开发,api"
-
 # 验证 brain/ 配置
 python tools/validator.py
 
-# 在个人版和OSS版之间同步
+# 生成新域
+python tools/domain_generator.py --name "营销项目" --keywords "campaign,analytics"
+
+# 同步个人版 ↔ 开源版
 python tools/sync_manager.py --personal /path/to/project --direction pull
 ```
-
-详见 [docs/advanced-mode.md](docs/advanced-mode.md)。
 
 ---
 
 ## 贡献
 
-欢迎贡献！详见[贡献指南](docs/contributing.md)。
+欢迎贡献！详见 [docs/contributing.md](docs/contributing.md)。
 
-我们特别需要：
-- 🌍 翻译
+我们需要帮助的方向：
+- 🌍 翻译（中文、英文、日文……）
 - 📦 新域模板
 - 🔧 工具改进
 - 📊 真实使用案例
@@ -125,7 +143,7 @@ python tools/sync_manager.py --personal /path/to/project --direction pull
 
 ## 许可证
 
-MIT License — 随便用。
+MIT — 随便用。
 
 ---
 
