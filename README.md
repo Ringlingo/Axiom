@@ -57,7 +57,6 @@ These five laws make the difference between an AI that is *capable* and an AI th
 |---------|-------|-----|
 | **Claude Code** | `.claude/brain/` | Add to `CLAUDE.md` |
 | **Cursor** | `.cursor/brain/` | Add to `.cursor/rules/` |
-| **WorkBuddy** | `.workbuddy/brain/` | Skill trigger |
 | **Any LLM** | Anywhere | Tell it: "Read brain/ACTIVATE.md first" |
 
 ### 2. Fill in your project knowledge
@@ -119,7 +118,6 @@ Most AI problems are not about intelligence. They are about judgment:
 |-----------|--------|---------|
 | Claude Code | ✅ | Best — native file access |
 | Cursor | ✅ | Rule-based activation |
-| WorkBuddy | ✅ | Skill trigger |
 | GPT-4 / o1 / o3 | ✅ | Via axiom-single.md |
 | Gemini | ✅ | Via axiom-single.md |
 | Qwen | ✅ | Structured prompts |

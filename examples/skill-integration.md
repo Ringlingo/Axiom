@@ -1,22 +1,15 @@
-# MindKit as a WorkBuddy / Claude Code Skill
+# Axiom — AI Skill Integration Guide
 
-> If you use an AI tool that supports "Skills" or "Custom Instructions", you can load MindKit as a skill.
+> Load Axiom cognitive framework into any AI assistant that supports Skills, Custom Instructions, or Rules.
 
 ---
 
-## Method 1: WorkBuddy Skill (Recommended for WorkBuddy users)
-
-1. Copy the `记忆中枢/` skill folder to your `.workbuddy/skills/` directory
-2. Edit `SKILL.md` to point to your brain/ location
-3. WorkBuddy will auto-load the skill at conversation start
-4. The skill triggers the MindKit startup sequence
-
-## Method 2: Claude Code CLAUDE.md Integration
+## Method 1: Claude Code CLAUDE.md Integration (Recommended)
 
 Add this to your project's `CLAUDE.md`:
 
 ```markdown
-# MindKit Cognitive Framework
+# Axiom Cognitive Framework
 
 Read .claude/brain/ACTIVATE.md first at every session start.
 Follow its startup sequence to activate the framework.
@@ -29,13 +22,15 @@ Key protocols:
 - Safety: Never auto-execute destructive operations (HR-001 to HR-005)
 ```
 
-## Method 3: Cursor Rules
+---
 
-Create `.cursor/rules/mindkit.mdc`:
+## Method 2: Cursor Rules
+
+Create `.cursor/rules/axiom.mdc`:
 
 ```markdown
 ---
-description: MindKit cognitive framework — read brain/ACTIVATE.md first
+description: Axiom cognitive framework — read brain/ACTIVATE.md first
 globs:
 alwaysApply: true
 ---
@@ -44,7 +39,9 @@ Read .cursor/brain/ACTIVATE.md first at the start of every conversation.
 This is your cognitive framework — follow its protocols.
 ```
 
-## Method 4: Any LLM (Manual Paste)
+---
+
+## Method 3: Any LLM (Manual Paste)
 
 1. Open `brain/ACTIVATE.md` and copy its full content
 2. Paste into your AI's "Custom Instructions" or "System Prompt"
@@ -56,7 +53,7 @@ This is your cognitive framework — follow its protocols.
 ## How It Works
 
 ```
-Skill/CLAUDE.md/.mdc triggers
+CLAUDE.md / .mdc triggers
     ↓
 AI reads ACTIVATE.md (~500 tokens)
     ↓
@@ -72,4 +69,4 @@ Full cognitive framework is active
 
 ---
 
-_The skill is just a trigger. The architecture is in the files._
+_The integration is just a trigger. The architecture is in the files._

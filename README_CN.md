@@ -44,7 +44,6 @@
 |---------|------|---------|
 | **Claude Code** | `.claude/brain/` | 加入 `CLAUDE.md` |
 | **Cursor** | `.cursor/brain/` | 加入 `.cursor/rules/` |
-| **WorkBuddy** | `.workbuddy/brain/` | Skill 触发 |
 | **任何 LLM** | 任意位置 | 告诉它："先读 brain/ACTIVATE.md" |
 
 ### 第二步：填写你的项目知识
